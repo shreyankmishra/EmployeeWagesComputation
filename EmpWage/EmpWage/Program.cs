@@ -6,25 +6,22 @@ namespace EmpWage
     {
         static void Main(string[] args)
         {
-            int IS_PRESENT = 1;
-            int dailyWage, dailyHours;
-
+            int IS_PART_TIME = 1;
+            int IS_FULL_TIME = 2;
+            int EMP_RATE_PER_HOUR = 20;
+            int empHrs = 0;
+            int empWage = 0;
             Random random = new Random();
-
-            int checkValue = random.Next(2);
-
-            if (checkValue == IS_PRESENT)
-            {
-                dailyHours = 8;
-            }
+            int empCheck = random.Next(0, 3);
+            if (empCheck == IS_PART_TIME)
+                empHrs = 4;
+            else if (empCheck == IS_FULL_TIME)
+                empHrs = 8;
             else
-            {
-                dailyHours = 0;
-            }
+                empHrs = 0;
+            empWage = empHrs * EMP_RATE_PER_HOUR;
 
-            dailyWage = dailyHours * 20;
-
-            Console.WriteLine("Daily wage is : " + dailyWage);
+            Console.WriteLine("Emp wage is : " + empWage);
         }
     }
 }
