@@ -6,14 +6,25 @@ namespace EmpWage
     {
         static void Main(string[] args)
         {
-            int IS_FULL_TIME = 1;
-            Random random = new Random();
-            int checkVariable = random.Next(2);
+            int IS_PRESENT = 1;
+            int dailyWage, dailyHours;
 
-            if (checkVariable == IS_FULL_TIME)
-                Console.WriteLine("Employee is Present.");
+            Random random = new Random();
+
+            int checkValue = random.Next(2);
+
+            if (checkValue == IS_PRESENT)
+            {
+                dailyHours = 8;
+            }
             else
-                Console.WriteLine("Employee is Absent.");
+            {
+                dailyHours = 0;
+            }
+
+            dailyWage = dailyHours * 20;
+
+            Console.WriteLine("Daily wage is : " + dailyWage);
         }
     }
 }
